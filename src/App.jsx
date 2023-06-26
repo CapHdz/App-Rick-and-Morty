@@ -5,7 +5,7 @@ import Logout from './components/logout'
 function App() {
 
   return (
-    <Profile />
+    <Login />
     )
 }
 

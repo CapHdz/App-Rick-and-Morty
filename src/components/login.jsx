@@ -1,11 +1,19 @@
-import { useAuth0 } from '@auth0/auth0-react'
-import React from 'react'
+import { useAuth0 } from '@auth0/auth0-react';
+import React, { useEffect } from 'react';
 
 export default function Login() {
-    //creando una constante para validar la autenticacion
-    const { loginWithRedirect } = useAuth0();
+  const { loginWithRedirect, isAuthenticated, user } = useAuth0();
 
-    return (
-        <button className='btn btn-primary' onClick={ () => loginWithRedirect()}>Iniciar Sesion</button>
-    )
+  useEffect(() => {
+    if (isAuthenticated) {
+      // Mensaje de bienvenida al hacer login
+      console.log(`¡Bienvenido, ${user.name}!`);
+    }
+  }, [isAuthenticated, user]);
+
+  return (
+    <button className='btn btn-primary' onClick={() => loginWithRedirect()}>
+      Iniciar Sesión
+    </button>
+  );
 }

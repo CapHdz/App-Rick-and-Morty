@@ -15,7 +15,7 @@ class PerfilDeUsuario extends React.Component {
     const { nombre, edad, email } = this.state;
 
     return (
-      <div>
+      <div className='container'>
         <h2>Perfil de Usuario</h2>
         <p><strong>Nombre:</strong> {nombre}</p>
         <p><strong>Edad:</strong> {edad}</p>
