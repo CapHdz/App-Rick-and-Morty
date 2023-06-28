@@ -4,40 +4,31 @@ import axios from 'axios'
 
 export default function ListaCharacters() {
     const [characters, setCharacters] = useState ([]);
-
     const obtenerCharacters =  () => {
         axios.get("https://rickandmortyapi.com/api/character").then((response) => { 
-            console.log(response.data.results);
             setCharacters(response.data.results);
         }).catch((error) => {
             console.log(error);
         })
     }
-
     useEffect(() => {
         obtenerCharacters();
     }, [])
-
-    console.log(characters)
-    
     return (
         <>
-            <main className='bg-dark'>
+        <main className='bg-general'>
             <section className='container py-5'>
                 <div className='row'>
-                    <div className='col-md-7 text-white'>
-                        <h1>Todos los personajes de Rick and Morty</h1>
-                        <button className='btn btn-primary'>Busca el personaje de tu preferencia</button>
+                    <div className='col-md-8 d-flex align-items-center'>
+                        <h1 className='text-white titulo-home text-center'>Todos los personajes de Rick and Morty</h1>
                     </div>
-                    <div className='col-md-5'>
+                    <div className='col-md-4'>
                         <img src={rickandmorty} alt="morty" className='img-fluid'/>
                     </div>
                 </div>
             </section>
-        </main>
-
-        <div className='container'>
-            <h1 className='text-center text-black'> Lista de personajes</h1>
+            <div className='container'>
+            <h1 className='text-center titulo-home'> Lista de personajes</h1>
             <div className='row'>
                 {
                     characters.map((character, indice) => {
@@ -58,6 +49,7 @@ export default function ListaCharacters() {
                 }
             </div>
         </div>
+        </main>
         </>
     )
 }

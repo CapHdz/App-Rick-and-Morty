@@ -1,7 +1,12 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import Home from './Home'
+import BuscarPersonajes from './BuscarPersonajes'
+import Lista from './ListaCharacters'
 import Logo from '../assets/img/logo.png'
+import Logout from './logout'
+import Perfil from './profile'
+import Devs from './devs'
 
 export default function Header() {
     return (
@@ -32,9 +37,6 @@ export default function Header() {
                             <li className="nav-item">
                                 <Link to="/perfil" className='nav-link'>Perfil</Link>
                             </li>
-                            <li className="nav-item">
-                                <Link to="/logout" className='nav-link'>Logout</Link>
-                            </li>
                         </ul>
                     </div>
                 </div>
@@ -42,11 +44,10 @@ export default function Header() {
         </header>
             <Routes>
                 <Route path='/home' element={<Home/>} />
-                <Route path='/buscador' />
-                <Route path='/lista-de-personajes' />
-                <Route path='/devs'/>
-                <Route path='/perfil' />
-                <Route path='/logout' />
+                <Route path='/buscador' element={<BuscarPersonajes/>}/>
+                <Route path='/lista-de-personajes' element={<Lista/>} />
+                <Route path='/devs' element={<Devs/>}/>
+                <Route path='/perfil' element={<Perfil/>}/>
             </Routes>
         </BrowserRouter>
     )

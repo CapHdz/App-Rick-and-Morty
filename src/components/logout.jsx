@@ -5,6 +5,6 @@ export default function Logout() {
     const { logout } = useAuth0();
 
     return (
-        <button className='btn btn-danger' onClick={ () => logout({ logoutParams: {returnTo: window.location.origin}})}>Cerrar Sesion</button>
+        <button className='btn btn-outline-danger' onClick={ () => logout({ logoutParams: {returnTo: window.location.origin}})}>Cerrar Sesion</button>
     )
 }
