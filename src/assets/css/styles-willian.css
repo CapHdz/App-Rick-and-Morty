@@ -1,0 +1,17 @@
+.bg-general{
+    background-color: #004144;
+}
+#logo-header{
+    height: 3rem;
+}
+.titulo-home{
+    -webkit-text-stroke: 1px #c0df40;
+    color: #40b5cb;
+}
+.ruta{
+    text-decoration: none;
+}
+.link-ruta{
+    -webkit-text-stroke: 1px rgb(64, 181, 203);
+    text-decoration: none;
+}
