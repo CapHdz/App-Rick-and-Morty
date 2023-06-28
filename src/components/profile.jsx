@@ -19,8 +19,8 @@ const Profile = () => {
             <img src={user.picture} alt={user.name} id="profile"/>
           </div>
           <div className="col-md-8 ">
-            <h5 className="card-title text-white"><strong>Nombre:</strong> {user.name}</h5>
-            <p className="card-text text-white"><strong>Email:</strong> {user.email}</p>
+            <h5 className="card-title text-white titulo-home fs-3"><strong>Nombre:</strong> {user.name}</h5>
+            <p className="card-text text-white fs-4"><strong>Email:</strong> {user.email}</p>
             <Logout/>
           </div>
         </div>
